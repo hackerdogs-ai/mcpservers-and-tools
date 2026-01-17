@@ -1,0 +1,4 @@
+# Recon MCP Server Dependencies
+fastmcp>=2.12.5
+hd-logging>=1.0.0
+
