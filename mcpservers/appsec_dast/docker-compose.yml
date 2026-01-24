@@ -1,0 +1,18 @@
+version: '3.8'
+
+services:
+  appsec-dast-mcp:
+    build:
+      context: ..
+      dockerfile: appsec_dast/Dockerfile
+    image: appsec-dast-mcp:latest
+    volumes:
+      - ../../hd-cyberdefense/cyberdefense/tasks/application_security/tools:/app/application_security_tools:ro
+      - ./logs:/app/logs
+    environment:
+      - GITHUB_TOKEN=${GITHUB_TOKEN}
+      - PYTHONPATH=/app:/app/tools:/app/application_security_tools
+      - APPSEC_TOOLS_PATH=/app/application_security_tools
+    stdin_open: true
+    tty: true
+

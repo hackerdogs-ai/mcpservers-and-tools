@@ -1,0 +1,17 @@
+[project]
+name = "appsec-k8s-mcp"
+version = "0.1.0"
+description = "Kubernetes Security MCP Server (Kubescape, Kube-Bench, Kube-Hunter)"
+requires-python = ">=3.11"
+dependencies = [
+    "fastmcp>=2.12.5",
+    "hd-logging>=1.0.0",
+]
+
+[project.scripts]
+appsec-k8s-mcp = "appsec_k8s_mcp:main"
+
+[build-system]
+requires = ["setuptools>=61.0"]
+build-backend = "setuptools.build_meta"
+

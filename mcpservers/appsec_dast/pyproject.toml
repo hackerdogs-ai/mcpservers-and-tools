@@ -1,0 +1,17 @@
+[project]
+name = "appsec-dast-mcp"
+version = "0.1.0"
+description = "DAST MCP Server for Application Security Tools (ZAP, Nikto, SQLMap, Wapiti, Metasploit, W3AF)"
+requires-python = ">=3.11"
+dependencies = [
+    "fastmcp>=2.12.5",
+    "hd-logging>=1.0.0",
+]
+
+[project.scripts]
+appsec-dast-mcp = "appsec_dast_mcp:main"
+
+[build-system]
+requires = ["setuptools>=61.0"]
+build-backend = "setuptools.build_meta"
+

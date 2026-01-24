@@ -1,0 +1,17 @@
+[project]
+name = "appsec-secrets-mcp"
+version = "0.1.0"
+description = "Secrets MCP Server for Application Security Tools (Gitleaks, TruffleHog, GitGuardian)"
+requires-python = ">=3.11"
+dependencies = [
+    "fastmcp>=2.12.5",
+    "hd-logging>=1.0.0",
+]
+
+[project.scripts]
+appsec-secrets-mcp = "appsec_secrets_mcp:main"
+
+[build-system]
+requires = ["setuptools>=61.0"]
+build-backend = "setuptools.build_meta"
+

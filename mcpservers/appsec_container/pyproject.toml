@@ -1,0 +1,17 @@
+[project]
+name = "appsec-container-mcp"
+version = "0.1.0"
+description = "Container Security MCP Server (Grype, Trivy)"
+requires-python = ">=3.11"
+dependencies = [
+    "fastmcp>=2.12.5",
+    "hd-logging>=1.0.0",
+]
+
+[project.scripts]
+appsec-container-mcp = "appsec_container_mcp:main"
+
+[build-system]
+requires = ["setuptools>=61.0"]
+build-backend = "setuptools.build_meta"
+

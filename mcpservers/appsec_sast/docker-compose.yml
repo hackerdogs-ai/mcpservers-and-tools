@@ -1,0 +1,22 @@
+version: '3.8'
+
+services:
+  appsec-sast-mcp:
+    build:
+      context: .
+      dockerfile: Dockerfile
+    image: appsec-sast-mcp:latest
+    volumes:
+      # Mount application_security tools (adjust path as needed)
+      - ../../hd-cyberdefense/cyberdefense/tasks/application_security/tools:/app/application_security_tools:ro
+      # Mount logs directory
+      - ./logs:/app/logs
+    environment:
+      - GITHUB_TOKEN=${GITHUB_TOKEN}
+      - GITHUB_DEFAULT_TOKEN=${GITHUB_DEFAULT_TOKEN}
+      - PYTHONPATH=/app:/app/tools:/app/application_security_tools
+      - APPSEC_TOOLS_PATH=/app/application_security_tools
+    stdin_open: true
+    tty: true
+    # No ports needed - uses stdio
+
